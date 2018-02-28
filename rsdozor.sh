@@ -1,0 +1,1 @@
+cd dozor-httpd && sbt stage && rsync -t -r -v --delete-after --exclude conf/generated.keystore --exclude logs target/universal/stage/ root@10.199.31.204:/opt/dozor/smap-play-server/ && ssh root@10.199.31.204 /opt/dozor/bin/dsctl restart webserver
